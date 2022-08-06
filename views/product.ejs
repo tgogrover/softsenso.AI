@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  font-family: arial;
+  padding: 20px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.Header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  text-align: center;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center" class="Header" id="myHeader">Product Card</h2>
+
+<% if(Error !='') {%>
+  <h3 style="color: red"><%= Error %></h3>
+<% } %>
+<% if(message) {%>
+  <h3 style="color: green"><b><%= message %></b></h3>
+  <% } %>
+<% Message.forEach(function(product) { %> 
+
+<div class="card">
+  <img src="<%= product.image %>" alt="Denim Jeans" style="width:100%">
+  <h1><%= product.category %></h1>
+  <p class="price"><%= product.price %></p>
+  <p><%= product.description %></p>
+<a href="/api/Cart">  <p>CART</p></a>
+  <form action="/api/customer/addProductsToCart/<%= product._id%>" method="post" role="form"> 
+  <p><button>Add to Cart</button></p>
+</form>
+</div>
+
+
+<% }) %>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script>
+
+</body>
+</html>

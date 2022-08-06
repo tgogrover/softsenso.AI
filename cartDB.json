@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "62ed58f2918029f9727bf746"
+  },
+  "Cart_Items": [
+    {
+      "ProductId": {
+        "$oid": "62ed233f6f5dc40145276b62"
+      },
+      "Quantity": 6,
+      "_id": {
+        "$oid": "62ed58f2918029f9727bf747"
+      }
+    },
+    {
+      "ProductId": {
+        "$oid": "62ed233f6f5dc40145276b63"
+      },
+      "Quantity": 5,
+      "_id": {
+        "$oid": "62ee092369e086c07980ea4c"
+      }
+    },
+    {
+      "ProductId": {
+        "$oid": "62ed233f6f5dc40145276b64"
+      },
+      "Quantity": 1,
+      "_id": {
+        "$oid": "62ee0ae350c0ec16fb0520af"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-08-05T17:52:50.880Z"
+  },
+  "updatedAt": {
+    "$date": "2022-08-06T06:32:53.477Z"
+  },
+  "__v": 0
+}]

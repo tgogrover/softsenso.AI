@@ -1,0 +1,14 @@
+<% if(Error !='') {%>
+    <h3 style="color: red"><%= Error %></h3>
+  <% } %>
+  <% if(message) {%>
+    <h3 style="color: green"><b><%= message %></b></h3>
+    <% } %>
+  <% Message.forEach(function(product) { %> 
+
+    <h1><%= product.ProductId %></h1>
+  <p class="price"><%= product.Quantity %></p>
+  <a href="/api/getProducts">  <p>CART</p></a>
+
+
+    <% }) %>
